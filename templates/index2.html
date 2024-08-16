@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable Row Click Event with Editing</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
+</head>
+<body>
+    <table id="myTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <!-- Add your table headers here -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add your table body content here -->
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize DataTable
+            var table = $('#myTable').DataTable({
+                ajax: {
+                    url: "/dashboard1", // Change to the appropriate endpoint
+                    type: "GET", // Assuming you are retrieving data via GET request
+                    dataSrc: "" // Instruct DataTables to expect an array of objects directly
+                },
+                columns: [
+                    // Define your columns here
+                ],
+                select: true
+            });
+
+            // Initialize DataTable Editor
+            var editor = new $.fn.dataTable.Editor({
+                ajax: "/your_endpoint_to_handle_edits",
+                table: "#myTable",
+                fields: [
+                    // Define your editor fields here
+                ]
+            });
+
+            // Attach edit event to open editor
+            $('#myTable').on('click', 'tbody td', function(e) {
+                editor.inline(this);
+            });
+        });
+    </script>
+</body>
+</html>

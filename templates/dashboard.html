@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Table</title>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td:first-child {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Customer</th>
+            <th>Available?</th> <!-- New column -->
+            <th>Response</th>
+        </tr>
+        <tr>
+            <td rowspan="4">Customer 1</td>
+            <td>Yes</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response1" value="yes"> Yes</label>
+                <label><input type="radio" name="response1" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td>No</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response2" value="yes"> Yes</label>
+                <label><input type="radio" name="response2" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Yes</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response3" value="yes"> Yes</label>
+                <label><input type="radio" name="response3" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td>No</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response4" value="yes"> Yes</label>
+                <label><input type="radio" name="response4" value="no"> No</label>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Limit</th>
+            <th>Intrest o/s</th> <!-- New column -->
+            <th>Pending since (Intrest date)</th>
+        </tr>
+        <tr>
+            <td rowspan="1">Limit</td>
+            <td>Yes</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response1" value="yes"> Yes</label>
+                <label><input type="radio" name="response1" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="1">Interest O/S</td>
+
+            <td>No</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response2" value="yes"> Yes</label>
+                <label><input type="radio" name="response2" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="1">Pending since (Intrest date)</td>
+
+            <td>Yes</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response3" value="yes"> Yes</label>
+                <label><input type="radio" name="response3" value="no"> No</label>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="1">Customer 1</td>
+
+            <td>No</td> <!-- New column -->
+            <td>
+                <label><input type="radio" name="response4" value="yes"> Yes</label>
+                <label><input type="radio" name="response4" value="no"> No</label>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD DataTable</title>
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- DataTable container -->
+    <table id="myTable" class="display" style="width:100%; text-align:center;">
+        <!-- DataTable content here -->
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align: center;">Avaliable Details</th> <!-- Group for id, name, incident age, age, city -->
+                <th colspan="4" style="text-align: center; background-color: grey; ">Inputer Details</th> <!-- Group for age1, incident_age_entered, status, actions -->
+            </tr>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>incident age</th>
+                <th>age</th>
+                <th>city</th>
+                <th style="border: 2px solid grey;">age1</th>
+                <th>incident_age_entered</th>
+                <th>status</th>
+                <th>actions</th>
+
+
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>incident age</th>
+                <th>age</th>
+                <th>city</th>
+                <th>age1</th>
+                <th>incident_age_entered</th>
+                <th>status</th>
+                <th>action</th>
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Bootstrap modal for editing -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-name">Name:</label>
+                        <input type="text" class="form-control" id="edit-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-age">Age:</label>
+                        <input type="text" class="form-control" id="edit-age">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-age1">age1:</label>
+                        <input type="text" class="form-control" id="edit-age1">
+                    </div>
+                    <div class="form-group">
+                        <label for="incidentage1">incident_age_entered</label>
+                        <input type="text" class="form-control" id="incidentage1">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-city">City:</label>
+                        <input type="text" class="form-control" id="edit-city">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save-changes">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include DataTables JavaScript -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include your custom JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
